@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: smart-home-energy-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smart_home_energy
+    username: postgres
+    password: "SmartHome@2025!"  # Ensure correct handling of special chars
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update  # "update" for dev, use "validate" for production
+    show-sql: true
+
+  security:
+    user:
+      name: admin
+      password: admin123
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api  # ✅ Correct placement
+
+
